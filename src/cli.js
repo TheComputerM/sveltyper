@@ -68,7 +68,7 @@ if (path.extname(entry) === ".svelte") {
       }
       return acc;
     }, [])
-    .join("\n");
+    .join("\n\n");
 
   output = banner + "\n" + parsed;
 }
