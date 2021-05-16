@@ -18,6 +18,7 @@ export default (props) => {
       let type = "any";
       const typeTag = prop.tags.find(({ tag }) => tag === "type");
       if (typeTag) type = typeTag.type;
+      else if (prop.value === "''") type = 'string';
       else if (prop.value != null) {
         try {
           type = typeof JSON.parse(prop.value);
