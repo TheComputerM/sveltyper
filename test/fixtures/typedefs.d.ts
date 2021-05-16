@@ -1,5 +1,5 @@
-type AuthorName = string;
-type Author = { name?: AuthorName; dob?: string; };
+declare type AuthorName = string;
+declare type Author = { name?: AuthorName; dob?: string; };
 interface typedefsProps {
   /**
    * @default {}
