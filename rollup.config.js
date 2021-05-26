@@ -10,15 +10,23 @@ export default [
       banner: "#!/usr/bin/env node",
       interop: false,
     },
+    external: ["./index"],
     plugins: [nodeResolve(), terser()],
   },
   {
     input: "src/index.js",
-    output: {
-      file: "dist/index.js",
-      format: "cjs",
-      exports: "default"
-    },
-    plugins: [terser()]
+    output: [
+      {
+        file: "dist/index.js",
+        format: "cjs",
+        exports: "default",
+      },
+      {
+        file: "dist/index.mjs",
+        format: "esm",
+      },
+    ],
+    external: ["svelte-docster", "path"],
+    plugins: [terser()],
   },
 ];
