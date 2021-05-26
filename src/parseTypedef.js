@@ -1,6 +1,7 @@
 export default (typedefs) => {
-  if (!typedefs) return "";
-  return Object.entries(typedefs)
+  const entries = Object.entries(typedefs);
+  if (!entries.length) return "";
+  return entries
     .reduce((acc, [name, { value }]) => {
       acc.push(`declare type ${name} = ${value};`);
       return acc;

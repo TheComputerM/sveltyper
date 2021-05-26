@@ -1,5 +1,5 @@
 export default (str, indent) =>
   str
     .split("\n")
-    .map((line) => " ".repeat(indent) + line)
+    .map((line) => (line.trim() === "" ? "" : " ".repeat(indent) + line))
     .join("\n");
