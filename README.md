@@ -1,6 +1,6 @@
 <h1 align="center">sveltyper</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/npm/v/sveltyper" />
   <a href="https://github.com/TheComputerM/sveltyper#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -58,7 +58,7 @@ sveltyper({
 
 ### CLI
 
-Make sure your package.json has an entrypoint in the `svelte` field and then run this command to generate type definitions in the `types` folder.
+Make sure your package.json has an entrypoint in the `svelte` field and then run this command to generate type definitions in the `types` folder. This CLI is only optimized for simple packages, if you have a more complex usecase, please use the JS API to generate types.
 
 ```sh
 sveltyper types
