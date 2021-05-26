@@ -1,6 +1,6 @@
 {
   "name": "sveltyper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tool to generate declaration files for Svelte component.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
