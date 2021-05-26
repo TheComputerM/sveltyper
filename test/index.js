@@ -1,20 +1,16 @@
 import { test } from "uvu";
 import { fixture } from "uvu/assert";
 import generate from "../src/index";
-
 import path from "path";
-import { assert } from "console";
-
-const tests = ["props", "slots", "events", "restProps", "typedefs"];
 
 function read(filename) {
-  const file = path.join(__dirname, "fixtures", `${filename}.svelte`);
+  const file = path.join(__dirname, "fixtures", filename);
   return generate({ file });
 }
 
-test("events", () => {
+test("e2e events", () => {
   fixture(
-    read("events"),
+    read("events.svelte"),
     `
   interface eventsProps {
     /**
@@ -31,9 +27,9 @@ test("events", () => {
   );
 });
 
-test("slots", () => {
+test("e2e slots", () => {
   fixture(
-    read("slots"),
+    read("slots.svelte"),
     `
   interface slotsProps {
     /**
@@ -50,9 +46,9 @@ test("slots", () => {
   );
 });
 
-test("props", () => {
+test("e2e props", () => {
   fixture(
-    read("props"),
+    read("props.svelte"),
     `
   interface propsProps {
     /**
@@ -79,7 +75,7 @@ test("props", () => {
 
 test("e2e typedefs", () => {
   fixture(
-    read("typedefs"),
+    read("typedefs.svelte"),
     `declare type AuthorName = string;
 declare type Author = { name?: AuthorName; dob?: string; };
 interface typedefsProps {
@@ -104,7 +100,7 @@ declare class typedefs extends SvelteComponentTyped<
 
 test("e2e restProps", () => {
   fixture(
-    read("restProps"),
+    read("restProps.svelte"),
     `
     interface restPropsProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["h1"]>, svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["button"]> {
 
@@ -116,7 +112,6 @@ test("e2e restProps", () => {
       {default: {};}
     > {}`
   );
-})
-
+});
 
 test.run();
