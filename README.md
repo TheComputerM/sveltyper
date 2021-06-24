@@ -15,6 +15,12 @@
   </a>
 </p>
 
+----
+# Attention !!!!
+
+### Package has been moved to the [svelte-docster monorepo](https://github.com/TheComputerM/svelte-docster/tree/main/sveltyper)
+----
+
 > A tool to generate declaration files for Svelte component.
 
 ### 🏠 [Homepage](https://github.com/TheComputerM/sveltyper#readme)
